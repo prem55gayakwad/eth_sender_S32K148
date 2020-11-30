@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding= "UTF-8" ?>
+<configuration name="S32K148" version="1.7" xsi:schemaLocation="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7 http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7.xsd" uuid="cff862dc-3b9f-49dd-9ce4-ed437e012c8d" xmlns="http://mcuxpresso.nxp.com/XSD/mex_configuration_1.7" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <common>
+      <processor>S32K148</processor>
+      <package>S32K148_LQFP144</package>
+      <mcu_data>s32sdk_s32k1xx_rtm_400</mcu_data>
+      <cores selected="core0">
+         <core name="Cortex-M4" id="core0" description=""/>
+      </cores>
+      <description>Configuration imported from Ether_typ_BT</description>
+   </common>
+   <preferences>
+      <validate_boot_init_only>true</validate_boot_init_only>
+      <generate_extended_information>false</generate_extended_information>
+      <generate_code_modified_registers_only>false</generate_code_modified_registers_only>
+   </preferences>
+   <tools>
+      <pins name="Pins" version="7.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/pin_mux.c" update_enabled="true"/>
+            <file path="board/pin_mux.h" update_enabled="true"/>
+         </generated_project_files>
+         <pins_profile>
+            <processor_version>0.0.0</processor_version>
+            <power_domains/>
+            <pin_labels>
+               <pin_label pin_num="128" pin_signal="PTE21" label="LED0" identifier="LED0"/>
+               <pin_label pin_num="129" pin_signal="PTE22" label="LED1" identifier="LED1"/>
+               <pin_label pin_num="131" pin_signal="PTE23" label="LED2" identifier="LED2"/>
+            </pin_labels>
+         </pins_profile>
+         <functions_list>
+            <function name="BOARD_InitPins">
+               <description>Configures pin routing and optionally pin electrical features.</description>
+               <options>
+                  <callFromInitBoot>true</callFromInitBoot>
+                  <coreID>core0</coreID>
+               </options>
+               <dependencies/>
+               <pins>
+                  <pin peripheral="PORTE" signal="port, 21" pin_num="128" pin_signal="PTE21">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="PORTE" signal="port, 22" pin_num="129" pin_signal="PTE22">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="PORTE" signal="port, 23" pin_num="131" pin_signal="PTE23">
+                     <pin_features>
+                        <pin_feature name="direction" value="OUTPUT"/>
+                     </pin_features>
+                  </pin>
+                  <pin peripheral="ENET" signal="col" pin_num="60" pin_signal="PTB23"/>
+                  <pin peripheral="ENET" signal="crs" pin_num="58" pin_signal="PTB22"/>
+                  <pin peripheral="ENET" signal="mdc" pin_num="40" pin_signal="PTB5"/>
+                  <pin peripheral="ENET" signal="mdio" pin_num="41" pin_signal="PTB4"/>
+                  <pin peripheral="ENET" signal="rxclk" pin_num="49" pin_signal="PTD10"/>
+                  <pin peripheral="ENET" signal="rxd, 0" pin_num="53" pin_signal="PTC0"/>
+                  <pin peripheral="ENET" signal="rxd, 1" pin_num="52" pin_signal="PTC1"/>
+                  <pin peripheral="ENET" signal="rxd_mii, 2" pin_num="54" pin_signal="PTD9"/>
+                  <pin peripheral="ENET" signal="rxd_mii, 3" pin_num="55" pin_signal="PTD8"/>
+                  <pin peripheral="ENET" signal="rxdv" pin_num="56" pin_signal="PTC17"/>
+                  <pin peripheral="ENET" signal="rxer" pin_num="57" pin_signal="PTC16"/>
+                  <pin peripheral="ENET" signal="tmr, 0" pin_num="34" pin_signal="PTD14"/>
+                  <pin peripheral="ENET" signal="tmr, 1" pin_num="35" pin_signal="PTD13"/>
+                  <pin peripheral="ENET" signal="tmr, 2" pin_num="29" pin_signal="PTD15"/>
+                  <pin peripheral="ENET" signal="tmr, 3" pin_num="30" pin_signal="PTE9"/>
+                  <pin peripheral="ENET" signal="txclk" pin_num="48" pin_signal="PTD11"/>
+                  <pin peripheral="ENET" signal="txd, 0" pin_num="43" pin_signal="PTC2"/>
+                  <pin peripheral="ENET" signal="txd, 1" pin_num="44" pin_signal="PTD7"/>
+                  <pin peripheral="ENET" signal="txd_mii, 2" pin_num="45" pin_signal="PTD6"/>
+                  <pin peripheral="ENET" signal="txd_mii, 3" pin_num="46" pin_signal="PTD5"/>
+                  <pin peripheral="ENET" signal="txen" pin_num="47" pin_signal="PTD12"/>
+                  <pin peripheral="ENET" signal="txer" pin_num="42" pin_signal="PTC3"/>
+               </pins>
+            </function>
+         </functions_list>
+      </pins>
+      <clocks name="Clocks" version="7.0" enabled="true" update_project_code="true">
+         <generated_project_files>
+            <file path="board/clock_config.c" update_enabled="true"/>
+            <file path="board/clock_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <clocks_profile>
+            <processor_version>0.0.0</processor_version>
+         </clocks_profile>
+         <clock_configurations>
+            <clock_configuration name="BOARD_BootClockRUN">
+               <description></description>
+               <options/>
+               <dependencies>
+                  <dependency resourceType="PinSignal" resourceId="SCG.EXTAL" description="&apos;EXTAL&apos; (Pins tool id: SCG.EXTAL, Clocks tool id: SCG.EXTAL) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="SCG.EXTAL" description="&apos;EXTAL&apos; (Pins tool id: SCG.EXTAL, Clocks tool id: SCG.EXTAL) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="SCG.XTAL" description="&apos;XTAL&apos; (Pins tool id: SCG.XTAL, Clocks tool id: SCG.XTAL) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="SCG.XTAL" description="&apos;XTAL&apos; (Pins tool id: SCG.XTAL, Clocks tool id: SCG.XTAL) needs to have &apos;OUTPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>OUTPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="RTC.rtc_clkin" description="&apos;RTC_CLKIN&apos; (Pins tool id: RTC.rtc_clkin, Clocks tool id: RTC.RTC_CLKIN) needs to be routed" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="routed" evaluation="">
+                        <data>true</data>
+                     </feature>
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+                  <dependency resourceType="PinSignal" resourceId="RTC.rtc_clkin" description="&apos;RTC_CLKIN&apos; (Pins tool id: RTC.rtc_clkin, Clocks tool id: RTC.RTC_CLKIN) needs to have &apos;INPUT&apos; direction" problem_level="1" source="Clocks:BOARD_BootClockRUN">
+                     <feature name="direction" evaluation="">
+                        <data>INPUT</data>
+                     </feature>
+                  </dependency>
+               </dependencies>
+               <clock_sources/>
+               <clock_outputs>
+                  <clock_output id="ADC0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ADC1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="BUS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CLKOUT.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CMP0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CORE_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="CRC0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DMA0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="DMAMUX0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EIM0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ENET0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="ERM0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="EWM0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FIRCDIV1_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FIRCDIV2_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLASH_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN1_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FLEXCAN2_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTFC0_CLK.outFreq" value="24 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM2_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM3_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM4_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM5_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM6_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FTM7_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="FlexIO0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPI2C1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPIT0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPO_1K_CLK.outFreq" value="1 kHz" locked="false" accuracy=""/>
+                  <clock_output id="LPO_CLK.outFreq" value="128 kHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPSPI2_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPTMR0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART0_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="LPUART2_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MPU0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="MSCM0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PDB0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PDB1_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PORTA_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PORTB_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PORTC_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PORTD_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PORTE_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="PREDIV_SYS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="QSPI0_2x_SFIF_CLK.outFreq" value="56 MHz" locked="false" accuracy=""/>
+                  <clock_output id="QSPI0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="QSPI0_MODULE_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="QSPI0_SFIF_CLK.outFreq" value="28 MHz" locked="false" accuracy=""/>
+                  <clock_output id="QSPI0_SFIF_CLK_HYP_PREMUX.outFreq" value="28 MHz" locked="false" accuracy=""/>
+                  <clock_output id="RTC0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="RTC_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SAI0_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SAI1_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SCGCLKOUT.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SIRCDIV1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SIRCDIV2_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SOSCDIV1_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SOSCDIV2_CLK.outFreq" value="8 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SPLLDIV1_CLK.outFreq" value="56 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SPLLDIV2_CLK.outFreq" value="28 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SPLL_CLK_OUT.outFreq" value="112 MHz" locked="false" accuracy=""/>
+                  <clock_output id="SYS_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+                  <clock_output id="TRACE_CLK.outFreq" value="48 MHz" locked="false" accuracy=""/>
+               </clock_outputs>
+               <clock_settings>
+                  <setting id="HSRUN:SCG.DIVBUS.scale" value="2" locked="true"/>
+                  <setting id="HSRUN:SCG.DIVCORE.scale" value="1" locked="true"/>
+                  <setting id="HSRUN:SCG.DIVSLOW.scale" value="4" locked="true"/>
+                  <setting id="HSRUN:SCG.SCSSEL.sel" value="SCG.SPLL_CLK" locked="false"/>
+                  <setting id="PCC.ENET0_CLK_SEL.sel" value="SCG.FIRCDIV1_CLK" locked="false"/>
+                  <setting id="PCC.LPTMR0_FRAC.scale" value="1" locked="true"/>
+                  <setting id="PCC.LPUART0_CLK_SEL.sel" value="SCG.SOSCDIV2_CLK" locked="false"/>
+                  <setting id="PCC.LPUART1_CLK_SEL.sel" value="SCG.SOSCDIV2_CLK" locked="false"/>
+                  <setting id="PCC.LPUART2_CLK_SEL.sel" value="SCG.SOSCDIV2_CLK" locked="false"/>
+                  <setting id="PCC.PREDIV.scale" value="1" locked="true"/>
+                  <setting id="PCC.PREDIVTRACE.scale" value="1" locked="true"/>
+                  <setting id="PCC.TRACE_FRAC.scale" value="1" locked="true"/>
+                  <setting id="RTCCLKSEL.sel" value="SCG.FIRCDIV1_CLK" locked="false"/>
+                  <setting id="RUN:SCG.DIVBUS.scale" value="1" locked="true"/>
+                  <setting id="RUN:SCG.DIVCORE.scale" value="1" locked="true"/>
+                  <setting id="RUN:SCG.DIVSLOW.scale" value="2" locked="true"/>
+                  <setting id="SCG.DIVBUS.scale" value="1" locked="true"/>
+                  <setting id="SCG.DIVCORE.scale" value="1" locked="true"/>
+                  <setting id="SCG.DIVSLOW.scale" value="2" locked="true"/>
+                  <setting id="SCG.FIRCDIV1.scale" value="1" locked="true"/>
+                  <setting id="SCG.FIRCDIV2.scale" value="1" locked="true"/>
+                  <setting id="SCG.PREDIV.scale" value="1" locked="true"/>
+                  <setting id="SCG.SIRCDIV1.scale" value="1" locked="true"/>
+                  <setting id="SCG.SIRCDIV2.scale" value="1" locked="true"/>
+                  <setting id="SCG.SOSCDIV1.scale" value="1" locked="true"/>
+                  <setting id="SCG.SOSCDIV2.scale" value="1" locked="true"/>
+                  <setting id="SCG.SPLLDIV1.scale" value="2" locked="true"/>
+                  <setting id="SCG.SPLLDIV2.scale" value="4" locked="true"/>
+                  <setting id="SCG.SPLL_mul.scale" value="28" locked="true"/>
+                  <setting id="VLPR:SCG.DIVBUS.scale" value="1" locked="true"/>
+                  <setting id="VLPR:SCG.DIVCORE.scale" value="2" locked="true"/>
+                  <setting id="VLPR:SCG.DIVSLOW.scale" value="4" locked="true"/>
+                  <setting id="VLPR:SCG.SCSSEL.sel" value="SCG.SIRC" locked="false"/>
+               </clock_settings>
+               <called_from_default_init>true</called_from_default_init>
+            </clock_configuration>
+         </clock_configurations>
+      </clocks>
+      <ddr name="DDR" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <components/>
+      </ddr>
+      <dcd name="DCD" version="1.0" enabled="false" update_project_code="true" isSelfTest="false">
+         <generated_project_files/>
+         <dcdx_profile>
+            <processor_version>N/A</processor_version>
+         </dcdx_profile>
+         <dcdx_configurations/>
+      </dcd>
+      <ivt name="IVT" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <ivt_profile>
+            <processor_version>N/A</processor_version>
+         </ivt_profile>
+      </ivt>
+      <quadspi name="QuadSPI" version="1.0" enabled="false" update_project_code="true">
+         <generated_project_files/>
+         <quadspi_profile>
+            <processor_version>N/A</processor_version>
+         </quadspi_profile>
+      </quadspi>
+      <periphs name="Peripherals" version="7.0" enabled="true" update_project_code="true">
+         <dependencies>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.enet" description="ENET Driver not found in the toolchain/IDE project. Project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.enet" description="Unsupported version of the ENET Driver in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. Project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.phy" description="PHY Driver not found in the toolchain/IDE project. Project will not compile!" problem_level="2" source="Peripherals">
+               <feature name="enabled" evaluation="equal">
+                  <data type="Boolean">true</data>
+               </feature>
+            </dependency>
+            <dependency resourceType="SWComponent" resourceId="platform.driver.phy" description="Unsupported version of the PHY Driver in the toolchain/IDE project. Required: ${required_value}, actual: ${actual_value}. Project might not compile correctly." problem_level="1" source="Peripherals">
+               <feature name="version" evaluation="equivalent">
+                  <data type="Version">1.0.0</data>
+               </feature>
+            </dependency>
+         </dependencies>
+         <generated_project_files>
+            <file path="board/peripherals_enet_config_1.c" update_enabled="true"/>
+            <file path="board/peripherals_enet_config_1.h" update_enabled="true"/>
+            <file path="board/peripherals_phy_1.c" update_enabled="true"/>
+            <file path="board/peripherals_phy_1.h" update_enabled="true"/>
+            <file path="board/sdk_project_config.h" update_enabled="true"/>
+         </generated_project_files>
+         <peripherals_profile>
+            <processor_version>0.0.0</processor_version>
+         </peripherals_profile>
+         <functional_groups>
+            <functional_group name="BOARD_InitPeripherals" uuid="23631c9c-96af-4ef1-a29b-83139b23b73e" called_from_default_init="true" id_prefix="" core="core0">
+               <description></description>
+               <options/>
+               <dependencies/>
+               <instances>
+                  <instance name="enet_config_1" uuid="1b38a9d6-3823-4cdd-a422-3efb56cab3df" type="enet_config" type_id="enet" mode="general" peripheral="ENET" enabled="true" comment="" custom_name_enabled="false">
+                     <config_set name="enet">
+                        <setting name="enet_state_name" value="enetState"/>
+                        <setting name="enet_mac" value="22:33:44:55:66:77"/>
+                        <struct name="enetCfg">
+                           <setting name="name" value="enetInitConfig"/>
+                           <setting name="readonly" value="true"/>
+                           <setting name="enetCfg_maxFrameLen" value="1518"/>
+                           <setting name="callback" value="rx_callback"/>
+                           <struct name="enetCfg_interrupts">
+                              <setting name="enetCfg_rxInt" value="false"/>
+                              <setting name="enetCfg_txInt" value="false"/>
+                              <setting name="enetCfg_errInt" value="false"/>
+                              <setting name="enetCfg_wakeInt" value="false"/>
+                              <setting name="enetCfg_timerInt" value="false"/>
+                           </struct>
+                           <struct name="enetCfg_miiConfig">
+                              <setting name="enetCfg_miiMode" value="ENET_RMII_MODE"/>
+                              <setting name="enetCfg_miiSpeed" value="ENET_MII_SPEED_100M"/>
+                              <setting name="enetCfg_miiDuplex" value="ENET_MII_FULL_DUPLEX"/>
+                           </struct>
+                           <struct name="enetCfg_txAccelerConfig">
+                              <setting name="ENET_TX_ACCEL_ENABLE_SHIFT16" value="false"/>
+                              <setting name="ENET_TX_ACCEL_INSERT_IP_CHECKSUM" value="false"/>
+                              <setting name="ENET_TX_ACCEL_INSERT_PROTO_CHECKSUM" value="false"/>
+                           </struct>
+                           <struct name="enetCfg_rxAccelerConfig">
+                              <setting name="ENET_RX_ACCEL_REMOVE_PAD" value="false"/>
+                              <setting name="ENET_RX_ACCEL_ENABLE_IP_CHECK" value="false"/>
+                              <setting name="ENET_RX_ACCEL_ENABLE_PROTO_CHECK" value="false"/>
+                              <setting name="ENET_RX_ACCEL_ENABLE_MAC_CHECK" value="false"/>
+                              <setting name="ENET_RX_ACCEL_ENABLE_SHIFT16" value="false"/>
+                           </struct>
+                           <struct name="enetCfg_rxSpecialConfig">
+                              <setting name="ENET_RX_CONFIG_ENABLE_PAYLOAD_LEN_CHECK" value="false"/>
+                              <setting name="ENET_RX_CONFIG_STRIP_CRC_FIELD" value="false"/>
+                              <setting name="ENET_RX_CONFIG_FORWARD_PAUSE_FRAMES" value="false"/>
+                              <setting name="ENET_RX_CONFIG_REMOVE_PADDING" value="false"/>
+                              <setting name="ENET_RX_CONFIG_ENABLE_FLOW_CONTROL" value="false"/>
+                              <setting name="ENET_RX_CONFIG_REJECT_BROADCAST_FRAMES" value="false"/>
+                              <setting name="ENET_RX_CONFIG_ENABLE_PROMISCUOUS_MODE" value="false"/>
+                              <setting name="ENET_RX_CONFIG_ENABLE_MII_LOOPBACK" value="false"/>
+                           </struct>
+                           <struct name="enetCfg_txSpecialConfig">
+                              <setting name="ENET_TX_CONFIG_DISABLE_CRC_APPEND" value="false"/>
+                              <setting name="ENET_TX_CONFIG_ENABLE_MAC_ADDR_INSERTION" value="false"/>
+                           </struct>
+                        </struct>
+                        <array name="enetCfg_ringConfig">
+                           <struct name="0">
+                              <setting name="enet_rx_size" value="1"/>
+                              <setting name="enet_tx_size" value="1"/>
+                           </struct>
+                        </array>
+                        <setting name="enetTimerCfg_enable" value="false"/>
+                        <struct name="enetTimerCfg">
+                           <setting name="name" value="enetTimerInitConfig"/>
+                           <setting name="readonly" value="false"/>
+                           <setting name="enetTimerCfg_timerPeriod" value="1000000000"/>
+                           <setting name="enetTimerCfg_timerInc" value="1"/>
+                           <setting name="enetTimerCfg_correctionPeriod" value="1"/>
+                           <setting name="enetTimerCfg_correctionInc" value="1"/>
+                           <setting name="enetTimerCfg_irqEnable" value="false"/>
+                           <setting name="enetTimerCfg_callback" value="NULL"/>
+                        </struct>
+                        <array name="enetTimerCfg_channels"/>
+                     </config_set>
+                  </instance>
+                  <instance name="osif_1" uuid="e7ca148b-afb0-4931-944b-46467cfd49cc" type="osif" type_id="osif" mode="general" enabled="false" comment="" custom_name_enabled="false">
+                     <config_set name="osif"/>
+                  </instance>
+                  <instance name="phy_1" uuid="47f115c5-1410-4b37-8ae2-f98b6773e6b1" type="phy" type_id="phy" mode="general" enabled="true" comment="" custom_name_enabled="false">
+                     <config_set name="phy">
+                        <array name="phy_configs">
+                           <struct name="0">
+                              <struct name="phyStdCfg">
+                                 <setting name="name" value="PHY_INSTANCE_0"/>
+                                 <setting name="type" value="PHY_TYPE_TJA110X"/>
+                                 <setting name="location" value="PHY_LOCATION_EXTERNAL"/>
+                                 <setting name="enetInstance" value="0"/>
+                                 <setting name="addr" value="0"/>
+                                 <setting name="role" value="PHY_ROLE_MASTER"/>
+                                 <setting name="linkUpEventCB" value="link_up"/>
+                                 <setting name="linkDownEventCB" value="link_down"/>
+                                 <setting name="autonegCompleteCB" value="NULL"/>
+                                 <setting name="autonegFailedCB" value="NULL"/>
+                              </struct>
+                           </struct>
+                        </array>
+                     </config_set>
+                  </instance>
+                  <instance name="tcpip_stack_1" uuid="9bc345a1-284b-4f1c-a771-06c8a93e4f8e" type="tcpip_config" type_id="tcpip" mode="general" enabled="false" comment="" custom_name_enabled="false">
+                     <config_set name="tcpip_cfg" quick_selection="tcpip_baremetal_config">
+                        <struct name="generic_tab">
+                           <setting name="osEnable" value="false"/>
+                           <setting name="baremetalChoice" value="USING_OS_BAREMETAL"/>
+                           <setting name="lowlevelIface" value="ENET"/>
+                           <setting name="txRingSize" value="2"/>
+                           <setting name="rxRingSize" value="6"/>
+                           <setting name="boolEnableHostname" value="true"/>
+                        </struct>
+                        <array name="netifcfg_tab">
+                           <struct name="0">
+                              <setting name="boolIface" value="true"/>
+                              <setting name="hostname" value="tcpipBoard1"/>
+                              <setting name="macAddress" value="22:33:44:55:66:77"/>
+                              <setting name="boolDhcp" value="false"/>
+                              <setting name="boolAutoip" value="false"/>
+                              <setting name="ipv4Address" value="192.168.0.200"/>
+                              <setting name="ipv4Subnet" value="255.255.255.0"/>
+                              <setting name="ipv4Gateway" value="192.168.0.1"/>
+                              <setting name="boolIpv6" value="true"/>
+                           </struct>
+                        </array>
+                        <struct name="datalink_tab">
+                           <setting name="miiMode" value="MII"/>
+                           <setting name="miiSpeed" value="10M"/>
+                           <setting name="boolARP" value="true"/>
+                           <setting name="arpTableSize" value="10"/>
+                           <setting name="boolARPQueue" value="true"/>
+                        </struct>
+                        <struct name="network_tab">
+                           <struct name="ipv4_id">
+                              <setting name="boolIpv4" value="true"/>
+                              <struct name="ipv4_auto_id">
+                                 <setting name="dhcp2autoipTries" value="3"/>
+                              </struct>
+                              <struct name="ipv4_extensions_id">
+                                 <setting name="ipforward" value="false"/>
+                                 <setting name="ipreassembly" value="true"/>
+                                 <setting name="ipfrag" value="true"/>
+                              </struct>
+                              <struct name="ipv4_icmp">
+                                 <setting name="icmp_enable" value="true"/>
+                                 <setting name="icmp_ttl" value="255"/>
+                              </struct>
+                              <struct name="ipv4_igmp">
+                                 <setting name="igmp_enable" value="true"/>
+                              </struct>
+                           </struct>
+                        </struct>
+                        <struct name="transport_tab">
+                           <struct name="tcp_id">
+                              <setting name="boolTcp" value="true"/>
+                              <setting name="boolQueue" value="false"/>
+                              <setting name="ttl" value="255"/>
+                              <setting name="mss" value="1460"/>
+                              <setting name="snd_buf" value="2920"/>
+                              <setting name="wnd" value="60000"/>
+                              <setting name="maxrtx" value="12"/>
+                              <setting name="synmaxrtx" value="4"/>
+                           </struct>
+                           <struct name="udp_id">
+                              <setting name="boolUdp" value="true"/>
+                              <setting name="ttl" value="255"/>
+                           </struct>
+                        </struct>
+                        <struct name="application_tab">
+                           <struct name="raw">
+                              <struct name="rawSettings">
+                                 <setting name="enableRaw" value="false"/>
+                              </struct>
+                           </struct>
+                        </struct>
+                        <struct name="memory_tab">
+                           <setting name="memAlign" value="4"/>
+                           <setting name="memHeapSize" value="20480"/>
+                           <setting name="noPacketBuf" value="8"/>
+                           <setting name="noRawPcb" value="4"/>
+                           <setting name="noUdpPcb" value="8"/>
+                           <setting name="noTcpPcb" value="8"/>
+                           <setting name="noListenTcpPcb" value="8"/>
+                           <setting name="noSegmentTcpPcb" value="16"/>
+                           <setting name="noActiveTimeouts" value="15"/>
+                           <setting name="noStructNetbufs" value="16"/>
+                           <setting name="noStructNetconns" value="32"/>
+                           <setting name="noStructTcpipMsgApi" value="8"/>
+                           <setting name="noStructTcpipMsgInpkt" value="8"/>
+                           <setting name="noBufferInPool" value="0"/>
+                        </struct>
+                        <struct name="checksum_tab">
+                           <setting name="boolCksumPerNetif" value="false"/>
+                           <struct name="checksum_id">
+                              <setting name="boolCksumIPGen" value="false"/>
+                              <setting name="boolCksumUDPGen" value="false"/>
+                              <setting name="boolCksumTCPGen" value="false"/>
+                              <setting name="boolCksumICMPGen" value="false"/>
+                              <setting name="boolCksumIPValid" value="false"/>
+                              <setting name="boolCksumUDPValid" value="false"/>
+                              <setting name="boolCksumTCPValid" value="false"/>
+                              <setting name="boolCksumICMPValid" value="false"/>
+                              <setting name="boolCksumOnCopy" value="false"/>
+                           </struct>
+                        </struct>
+                        <struct name="debug_tab">
+                           <setting name="enableDebug" value="false"/>
+                           <struct name="messageTypeDebug">
+                              <setting name="debugTrace" value="false"/>
+                              <setting name="debugState" value="false"/>
+                              <setting name="debugFresh" value="false"/>
+                              <setting name="debugHalt" value="false"/>
+                           </struct>
+                           <setting name="minDebugLevel" value="LWIP_DBG_LEVEL_ALL"/>
+                           <struct name="protocolDebug">
+                              <setting name="etharpDebug" value="false"/>
+                              <setting name="netifDebug" value="false"/>
+                              <setting name="pbufDebug" value="false"/>
+                              <setting name="apiLibDebug" value="false"/>
+                              <setting name="apiMsgDebug" value="false"/>
+                              <setting name="socketsDebug" value="false"/>
+                              <setting name="icmpDebug" value="false"/>
+                              <setting name="igmpDebug" value="false"/>
+                              <setting name="inetDebug" value="false"/>
+                              <setting name="ipDebug" value="false"/>
+                              <setting name="ipReassDebug" value="false"/>
+                              <setting name="rawDebug" value="false"/>
+                              <setting name="memDebug" value="false"/>
+                              <setting name="mempDebug" value="false"/>
+                              <setting name="sysDebug" value="false"/>
+                              <setting name="timersDebug" value="false"/>
+                              <setting name="tcpDebug" value="false"/>
+                              <setting name="tcpInputDebug" value="false"/>
+                              <setting name="tcpFrDebug" value="false"/>
+                              <setting name="tcpRtoDebug" value="false"/>
+                              <setting name="tcpCwndDebug" value="false"/>
+                              <setting name="tcpWndDebug" value="false"/>
+                              <setting name="tcpOutputDebug" value="false"/>
+                              <setting name="tcpRstDebug" value="false"/>
+                              <setting name="tcpQlenDebug" value="false"/>
+                              <setting name="udpDebug" value="false"/>
+                              <setting name="tcpipDebug" value="false"/>
+                              <setting name="slipDebug" value="false"/>
+                              <setting name="dhcpDebug" value="false"/>
+                              <setting name="autoipDebug" value="false"/>
+                              <setting name="dnsDebug" value="false"/>
+                              <setting name="ip6Debug" value="false"/>
+                              <setting name="pppDebug" value="false"/>
+                              <setting name="mdnsDebug" value="false"/>
+                              <setting name="mqttDebug" value="false"/>
+                              <setting name="snmpDebug" value="false"/>
+                              <setting name="sntpDebug" value="false"/>
+                              <setting name="tftpDebug" value="false"/>
+                              <setting name="pingDebug" value="false"/>
+                              <setting name="httpdDebug" value="false"/>
+                              <setting name="rtpDebug" value="false"/>
+                              <setting name="smtpDebug" value="false"/>
+                           </struct>
+                        </struct>
+                        <struct name="user_tab">
+                           <setting name="configUSER_SETTINGS" value=""/>
+                           <setting name="boolTimevalPrivate" value="false"/>
+                        </struct>
+                     </config_set>
+                  </instance>
+               </instances>
+            </functional_group>
+         </functional_groups>
+         <components/>
+      </periphs>
+   </tools>
+</configuration>
